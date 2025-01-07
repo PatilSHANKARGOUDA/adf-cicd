@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "cars-sales-project-adf"
+		},
+		"ls_ADLSg2_accountKey": {
+			"value": ""
+		},
+		"ls_azure_sql_db_password": {
+			"value": ""
+		},
+		"ls_ADLSg2_properties_typeProperties_url": {
+			"value": "https://carssalesprojectdl.dfs.core.windows.net/"
+		},
+		"ls_azure_sql_db_properties_typeProperties_server": {
+			"value": "carssalesserver.database.windows.net"
+		},
+		"ls_azure_sql_db_properties_typeProperties_database": {
+			"value": "carssalesdb"
+		},
+		"ls_azure_sql_db_properties_typeProperties_userName": {
+			"value": "adminshankar"
+		},
+		"ls_github_carssales_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com"
+		}
+	}
+}
