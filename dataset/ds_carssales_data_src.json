@@ -1,0 +1,31 @@
+{
+	"name": "ds_carssales_data_src",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_github_carssales",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"pl_relative_URL": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "PatilSHANKARGOUDA/Azure-cars-sales-project/refs/heads/main/data/@{dataset().pl_relative_URL}",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

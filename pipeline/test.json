@@ -1,0 +1,90 @@
+{
+	"name": "test",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "ExcelSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE table emp",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dS_emp_src",
+						"type": "DatasetReference",
+						"parameters": {
+							"folder_name": {
+								"value": "@pipeline().parameters.folder_name",
+								"type": "Expression"
+							},
+							"file_name": {
+								"value": "@pipeline().parameters.file_name",
+								"type": "Expression"
+							},
+							"sheet_name": {
+								"value": "@pipeline().parameters.sheet_name",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "dS_emp",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"parameters": {
+			"folder_name": {
+				"type": "String",
+				"defaultValue": "year=2025/month=01"
+			},
+			"file_name": {
+				"type": "String",
+				"defaultValue": "emp_data.xlsx"
+			},
+			"sheet_name": {
+				"type": "String",
+				"defaultValue": "Sheet1"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-01-07T07:37:14Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

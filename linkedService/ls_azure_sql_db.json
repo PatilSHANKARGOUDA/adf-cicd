@@ -1,0 +1,17 @@
+{
+	"name": "ls_azure_sql_db",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "carssalesserver.database.windows.net",
+			"database": "carssalesdb",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "adminshankar",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDNCM0ZBN0IyLTE0NDgtNDQ5OS05MkFFLUY4MDgzMDM4Q0Q5Rl81M2I2MjE2OC0yNTJkLTRkNzAtYmZjMC0wZWMzYTI5YmIyMjIiDQp9"
+		}
+	}
+}

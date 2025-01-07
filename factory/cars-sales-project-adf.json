@@ -1,0 +1,9 @@
+{
+	"name": "cars-sales-project-adf",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "eaab445c-2bcc-436e-a4c1-34fa8b0db5b7",
+		"tenantId": "ec75aa0c-4e8e-4bfa-bbf4-12c24f3bc7a4"
+	}
+}

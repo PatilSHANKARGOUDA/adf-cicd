@@ -1,0 +1,21 @@
+{
+	"name": "ds_cars_sales_raw_data_src",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_ADLSg2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "raw/carssales",
+				"fileSystem": "bronze"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
